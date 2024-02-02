@@ -21,6 +21,7 @@ async def on_ready():
 )
 async def ping(interaction):
     await interaction.response.send_message('Pong')
+client.add_command(ping)
 
 @tree.command(
     name='hi',
@@ -28,5 +29,6 @@ async def ping(interaction):
 )
 async def hi(ctx):
     await ctx.send_message('Hey!')
+client.add_command(hi)
 
 client.run(token)
