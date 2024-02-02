@@ -1,10 +1,9 @@
 import discord
 from discord import app_commands
 
-token = "MTIwMjk1Mzk1NDA0NTA3MTQxMA.GsmN94.JbomqXRvI5j1Tw717vOeuIlTjKn3SeA5Rhk47c"
+from data.token import token
 
 intents = discord.Intents.default()
-
 client = discord.Client(intents=intents)
 tree = app_commands.CommandTree(client)
 
@@ -13,6 +12,7 @@ async def on_ready():
     print("----------")
     print("Bot is up!")
     print("----------")
+    print(" ")
 
 @tree.command(
     name='ping',
@@ -22,7 +22,11 @@ async def on_ready():
 async def ping(interaction):
     await interaction.response.send_message('Pong')
 
-#from data.commands import startup
-#from data.commands import cmds
+@tree.command(
+    name='hi',
+    description='Say hi to the Bot'
+)
+async def hi(ctx):
+    await ctx.send_message('Hey!')
 
 client.run(token)
