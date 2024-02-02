@@ -17,11 +17,9 @@ async def on_ready():
 @tree.command(
     name='ping',
     description='Check if bot is online/running correctly',
-    guild=discord.Object(id=963791704492748870)
 )
-async def ping(interaction):
-    await interaction.response.send_message('Pong')
-client.add_command(ping)
+async def ping(ctx):
+    await ctx.response.send_message('Pong')
 
 @tree.command(
     name='hi',
@@ -29,6 +27,9 @@ client.add_command(ping)
 )
 async def hi(ctx):
     await ctx.send_message('Hey!')
-client.add_command(hi)
+
+tree.add_command(ping)
+tree.add_command(hi)
+#tree.add_command()
 
 client.run(token)
