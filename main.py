@@ -12,7 +12,6 @@ async def on_ready():
     print("----------")
     print("Bot is up!")
     print("----------")
-    print(" ")
 
 @tree.command(
     name='ping',
