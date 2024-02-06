@@ -8,3 +8,9 @@ After installation put your own token in the data\token.py file and run "start.b
 
 
 ## Commands
+
+#### /ping
+Check if the bot is online/working properly
+
+#### /template
+Has no function 
