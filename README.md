@@ -1,6 +1,6 @@
 # Shiny Giggle
 
-A discord bot named Shiny Giggle!
+## A discord bot named Shiny Giggle!
 
 
 Install requirements using the install "install requirements.txt.bat" file in this folder.
