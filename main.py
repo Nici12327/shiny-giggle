@@ -31,8 +31,8 @@ async def ping(ctx):
 async def hi(ctx):
     await ctx.send_message('Hey!')
 
-#tree.add_command(ping)
-#tree.add_command(hi)
-#tree.add_command()
+# tree.add_command(ping)
+# tree.add_command(hi)
+# tree.add_command()
 
 client.run(token)
