@@ -22,9 +22,9 @@ async def on_ready():
     for g in client.guilds:
         print(f'{g.name} (id={g.id})')
 
-    # Register commands (modules under data/) and sync
+    # Register commands (modules under data/) and initialize event listeners
     try:
-        register_all(tree)
+        register_all(tree, client)
         synced = await tree.sync()
         print(f'Synced {len(synced)} command(s)')
     except Exception as e:

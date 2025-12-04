@@ -3,3 +3,4 @@
 data/__pycache__
 todo.txt
 data/token.py
+data/credentials.py
