@@ -7,9 +7,8 @@ def register_all(tree, client=None):
     will be initialized via their `setup(client)` coroutine.
     """
     # Individual modules expose a `register(tree)` function
-    from . import ping, hi, clear, shutdown
+    from . import ping, clear, shutdown
     ping.register(tree)
-    hi.register(tree)
     clear.register(tree)
     shutdown.register(tree)
 
