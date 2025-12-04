@@ -18,10 +18,10 @@ async def on_ready():
     print('Bot is up!')
 
     # Print all guilds the bot is in
-    print('Bot guilds')
+    print('Bot guilds:')
     for g in client.guilds:
         print(f'{g.name} (id={g.id})')
-        
+
     # Register commands (modules under data/) and sync
     try:
         register_all(tree)
