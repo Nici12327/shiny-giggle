@@ -26,9 +26,11 @@ async def on_ready():
     print('Bot is up!')
 
     # Print all guilds the bot is in
+    print(' ')
     print('Bot guilds:')
     for g in client.guilds:
         print(f'{g.name} (id={g.id})')
+        print(' ')
 
     # Register commands (modules under data/) and initialize event listeners
     try:
