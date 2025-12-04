@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
 
-from data.token import token
+from data.credentials import token
 from data import register_all
 
 intents = discord.Intents.default()
