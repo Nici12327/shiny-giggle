@@ -2,37 +2,33 @@ import discord
 from discord import app_commands
 
 from data.token import token
+from data import register_all
 
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 tree = app_commands.CommandTree(client)
 
-start=input('Do you want to start the bot? N/Y   ')
-if start == 'N':
+start = input('Do you want to start the bot? N/Y   ')
+if start.strip().upper() == 'N':
     exit()
+
 
 @client.event
 async def on_ready():
-    print("----------")
-    print("Bot is up!")
-    print("----------")
+    print('Bot is up!')
 
-@tree.command(
-    name='ping',
-    description='Check if bot is online/running correctly',
-)
-async def ping(ctx):
-    await ctx.response.send_message('Pong')
+    # Print all guilds the bot is in
+    print('Bot guilds')
+    for g in client.guilds:
+        print(f'{g.name} (id={g.id})')
+        
+    # Register commands (modules under data/) and sync
+    try:
+        register_all(tree)
+        synced = await tree.sync()
+        print(f'Synced {len(synced)} command(s)')
+    except Exception as e:
+        print(f'Failed to register/sync commands: {e}')
 
-@tree.command(
-    name='hi',
-    description='Say hi to the Bot'
-)
-async def hi(ctx):
-    await ctx.send_message('Hey!')
-
-# tree.add_command(ping)
-# tree.add_command(hi)
-# tree.add_command()
 
 client.run(token)
