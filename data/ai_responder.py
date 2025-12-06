@@ -7,7 +7,7 @@ import os
 TARGET_CHANNEL_ID = 1446140885199749290
 OLLAMA_BASE = "http://192.168.178.20:11434"
 MODEL = "gemma3:270m"
-REQUEST_TIMEOUT = 15
+REQUEST_TIMEOUT = 30
 CONVERSATION_LOGS_DIR = "data/conversation_logs"
 
 # Ensure logs directory exists
