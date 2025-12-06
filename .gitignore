@@ -5,3 +5,4 @@ todo.txt
 data/token.py
 data/credentials.py
 shiny-giggle.code-workspace
+.vscode/settings.json
