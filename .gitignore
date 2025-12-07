@@ -6,3 +6,4 @@ data/token.py
 data/credentials.py
 shiny-giggle.code-workspace
 .vscode/settings.json
+data/conversation_logs/user_752221035582980137.txt
