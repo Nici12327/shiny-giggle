@@ -28,7 +28,10 @@ def _save_conversation(user_id: int, history: list):
         with open(log_file, 'w', encoding='utf-8') as f:
             for author_name, msg_content in history:
                 if msg_content.strip():
-                    f.write(f"{author_name}: {msg_content}\n")
+                    if author_name == "TheBotCraft":
+                        f.write(f"You: {msg_content}\n")
+                    else:
+                        f.write(f"{author_name}: {msg_content}\n")
     except Exception as e:
         print(f"Error saving conversation log for user {user_id}: {e}")
 
@@ -56,6 +59,7 @@ def _call_ollama(prompt: str) -> str:
         "prompt": prompt,
         "stream": False
     }
+    print(f"Calling Ollama with prompt: {prompt}...")
 
     resp = requests.post(url, json=payload, timeout=REQUEST_TIMEOUT)
     resp.raise_for_status()

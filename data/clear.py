@@ -75,7 +75,10 @@ def register(tree: app_commands.CommandTree):
                 deleted += fallback_deleted
 
             await interaction.followup.send(f'Cleared {deleted} messages.')
+            print(f'Cleared {deleted} messages in channel {channel.id} ({channel.name})')
         except discord.Forbidden:
             await interaction.followup.send('I do not have permission to delete messages here.')
+            print(f'Failed to clear messages in channel {channel.id} ({channel.name}): Forbidden')
         except Exception as e:
             await interaction.followup.send(f'Failed to clear messages: {e}')
+            print(f'Failed to clear messages in channel {channel.id} ({channel.name}): {e}')

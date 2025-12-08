@@ -31,5 +31,6 @@ def register(tree: app_commands.CommandTree):
         # Authorized — acknowledge and shut down
         await interaction.response.send_message('Shutting down... (authorized)', ephemeral=True)
         # small delay so user sees response
+        print(f'Shutdown command received from authorized user: {interaction.user} ({interaction.user.id})')
         await asyncio.sleep(0.4)
         await interaction.client.close()
