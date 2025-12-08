@@ -8,4 +8,4 @@ control (add to `.gitignore`).
 # Paste your bot token below as a string assigned to `token`.
 # For improved security consider loading this from an environment variable
 # instead of committing it to a file.
-token = 'MTIwNTU1NDkwODc2MjM0MTQ0Nw.GRqTSV.-CtSqiQ91rSEyDY_9Qsfz8C1tffk_RYPc6Vc0g'  # Replace with your bot token
+token = 'Token here'  # Replace with your bot token
