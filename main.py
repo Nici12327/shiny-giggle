@@ -23,11 +23,9 @@ tree = app_commands.CommandTree(client)
 
 @client.event
 async def on_ready():
-    print('Bot is up!')
-
     # Print all guilds the bot is in
     print(' ')
-    print('Bot guilds:')
+    print('Bot Servers:')
     for g in client.guilds:
         print(f'{g.name} (id={g.id})')
         print(' ')
